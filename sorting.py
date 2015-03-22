@@ -1,5 +1,5 @@
 __author__ = 'archmage'
-# Code for Lectures 2 and 3 of MIT 6.006, Fall 2011 OCW
+# Code for Lectures 2, 3 and 4 of MIT 6.006, Fall 2011 OCW
 
 
 def main():
