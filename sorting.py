@@ -1,4 +1,4 @@
-__author__ = 'archmage'
+__author__ = 'rrampage'
 # Code for Lectures 2, 3 and 4 of MIT 6.006, Fall 2011 OCW
 
 
