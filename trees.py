@@ -14,11 +14,17 @@ class BstNode:
 
     def insert(self, child):
         if child.key > self.key:
-            self.right = child
-            child.parent = self
+            if self.right is None:
+                self.right = child
+                child.parent = self
+            else:
+                self.right.insert(child)
         else:
-            self.left = child
-            child.parent = self
+            if self.left is None:
+                self.left = child
+                child.parent = self
+            else:
+                self.left.insert(child)
 
     @staticmethod
     def is_root(x):
