@@ -99,6 +99,50 @@ def search(node, key):
         return search(node.right, key)
 
 
+# Rotates node x such that it becomes left child of it's former right child and the parent of right child's left child
+# Example:      y-(B,C)         C
+#           x -         => y-
+#               A               x-(A,B)
+def left_rotate(x):
+    # Here, y is x's right child. b is y's left child
+    # Temporary variable m is used to store x's original parent which will becomes y's parent
+    m = x.parent
+    y = x.right
+    b = y.left
+    # Setting x's parent as y's parent and x as y's left child, y as x's parent
+    y.parent = m
+    y.left = x
+    x.parent = y
+    # Setting b's parent as x and x's right as b
+    b.parent = x
+    x.right = b
+    # TODO Not sure what to return here.
+    # Returning y as it has taken x's position in the tree and is now balanced
+    return y
+
+
+# Rotates node y such that it becomes right child of it's former left child and the parent of left child's right child
+# Example:      (C)              (y)-(B,C)
+#           y-              => x-
+#               (x - (A,B)        A
+def right_rotate(y):
+    # Here, x is y's left child. b is x's right child
+    # Temporary variable m is used to store y's original parent which will becomes x's parent
+    m = y.parent
+    x = y.left
+    b = x.right
+    # Setting x's parent as y's parent and x as y's left child, y as x's parent
+    x.parent = m
+    x.right = y
+    y.parent = x
+    # Setting b's parent as x and x's right as b
+    b.parent = y
+    y.left = b
+    # TODO Not sure what to return here.
+    # Returning x as it has taken y's position in the tree and is now balanced
+    return x
+
+
 def main():
     print "Hello world!"
     a = BstNode(3)
